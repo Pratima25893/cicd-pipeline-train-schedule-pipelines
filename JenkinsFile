@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+  stages {
+    stage{"Build"} {
+      steps {
+        echo 'Running build automation'
+        sh './gradule build --no-demone'
+        archiveartifacts 'disc/train-scedule.tar.gz'
+      }
+    }
+  }
+}
